@@ -8,7 +8,7 @@ A backend service for managing FAQs with multilingual support, built using Node.
 - **Database:** PostgreSQL, sequelize-orm
 - **Caching:** Redis
 - **Translation:** Google Translate API
-- **Frontend:** React.js, Chakra UI, JavaScript, HTML, CSS
+- **Frontend:** React.js, Chakra UI
 - **WYSIWYG Editor:** TinyMCE Editor
 - **Version Control:** Git
 
