@@ -2,14 +2,15 @@
 
 A backend service for managing FAQs with multilingual support, built using Node.js, Express, Sequelize, and PostgreSQL.
 
-## **Table of Contents**
+## **Tech-Stack**
 
-- [Installation](#installation)
-- [Environment Variables](#environment-variables)
-- [API Usage](#api-usage)
-- [Running Tests](#running-tests)
-- [Contribution Guidelines](#contribution-guidelines)
-- [License](#license)
+- **Backend:** Node.js, Express.js
+- **Database:** PostgreSQL, sequelize-orm
+- **Caching:** Redis
+- **Translation:** Google Translate API
+- **Frontend:** React.js, Chakra UI, JavaScript, HTML, CSS
+- **WYSIWYG Editor:** TinyMCE Editor
+- **Version Control:** Git
 
 ---
 
