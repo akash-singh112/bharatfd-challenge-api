@@ -103,7 +103,7 @@ Create a `.env` file with the following variables:
 
 ```.env
 PORT = The port to run the backend on (Eg. 8800)
-DATABASE_URL = The URL connection string for your PostgreSQL database (I used Render to create a DB instance, you can too!).
+DB_URL = The URL connection string for your PostgreSQL database (I used Render to create a DB instance, you can too!).
 NODE_ENV = production
 REDIS_URL = Your redis instance URL connection string (Again, Render provides a free Redis instance for a month, so go for it!)
 ```
