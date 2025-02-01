@@ -1,0 +1,51 @@
+# Node.js dependencies
+node_modules/
+
+# Build output
+/dist/
+/build/
+dist-ssr/
+
+# Vite cache
+.vite/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# OS-specific files
+.DS_Store
+
+# Other editor-related files
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# npm and Yarn lock files (optional, depending on your project preference)
+yarn.lock
+
+# Coverage reports (if using testing tools)
+coverage/
+
+# Optional: If you're using Docker
+.docker/
+
+# Optional: If using a custom deployment
+*.pem
