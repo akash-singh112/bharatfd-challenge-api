@@ -9,12 +9,14 @@ import {
   PopoverContent,
   PopoverBody,
   useClipboard,
-  Container,
   useToast,
+  List,
+  ListItem,
+  VStack,
 } from "@chakra-ui/react";
 import PropTypes from "prop-types";
 import { useState } from "react";
-import { IoCopy } from "react-icons/io5";
+import { LuCopy, LuCopyCheck } from "react-icons/lu";
 
 export function DisplayFAQs({ faq, onDelete }) {
   const [language, setLang] = useState("en");
@@ -47,7 +49,12 @@ export function DisplayFAQs({ faq, onDelete }) {
   const displayAnswer = faq.translations[language]?.answer || faq.answer;
 
   return (
-    <Container borderWidth={1} borderRadius="md">
+    <VStack
+      borderWidth={1}
+      borderRadius="md"
+      maxWidth={"80vw"}
+      minWidth={"40vw"}
+    >
       <HStack key={faq.id} w="100%" justify="space-between" p={2}>
         <Box>
           <Text>
@@ -69,33 +76,31 @@ export function DisplayFAQs({ faq, onDelete }) {
             <PopoverContent fontSize={"sm"}>
               <PopoverArrow />
               <PopoverBody>
-                <ul style={{ padding: "0", listStyle: "none" }}>
-                  <li
+                <List style={{ padding: "0", listStyle: "none" }}>
+                  <ListItem
                     onClick={() => handleLanguageChange("en")}
-                    style={{
-                      backgroundColor:
-                        language === "en" ? "#e2e8f0" : "transparent",
-                      padding: "8px 16px",
-                      cursor: "pointer",
-                    }}
+                    bg={language === "en" ? "gray.200" : "transparent"}
+                    p={2}
+                    cursor="pointer"
+                    transition="0.2s"
+                    _hover={{ bg: "gray.300" }}
                   >
                     English
-                  </li>
+                  </ListItem>
                   {availableLanguages.map((lang) => (
-                    <li
+                    <ListItem
                       key={lang}
-                      style={{
-                        backgroundColor:
-                          language === lang ? "#e2e8f0" : "transparent",
-                        padding: "8px 16px",
-                        cursor: "pointer",
-                      }}
+                      bg={language === lang ? "gray.200" : "transparent"}
+                      p={2}
+                      cursor="pointer"
+                      transition="0.2s"
                       onClick={() => handleLanguageChange(lang)}
+                      _hover={{ bg: "gray.300" }}
                     >
                       {lang.toUpperCase()}
-                    </li>
+                    </ListItem>
                   ))}
-                </ul>
+                </List>
               </PopoverBody>
             </PopoverContent>
           </Popover>
@@ -110,14 +115,20 @@ export function DisplayFAQs({ faq, onDelete }) {
         </HStack>
       </HStack>
       <HStack mt={"3px"} justify={"center"}>
-        <Box mb={"3px"}>
-          <strong>{faq.id}</strong>
-          <Button onClick={onCopy} size={"sm"}>
-            {hasCopied ? "✅" : <IoCopy />}
+        <HStack mb={"3px"} gap={"15px"}>
+          <Text>
+            UUID: <strong>{faq.id}</strong>
+          </Text>
+          <Button
+            colorScheme={!hasCopied ? "blue" : "green"}
+            onClick={() => onCopy(faq.id)}
+            size={"sm"}
+          >
+            {hasCopied ? <LuCopyCheck /> : <LuCopy />}
           </Button>
-        </Box>
+        </HStack>
       </HStack>
-    </Container>
+    </VStack>
   );
 }
 

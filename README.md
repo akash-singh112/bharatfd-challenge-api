@@ -32,7 +32,7 @@ The `FAQ` table stores frequently asked questions along with their answers.
 | `createdAt` | `TIMESTAMP` | Timestamp when the entry was created             |
 | `updatedAt` | `TIMESTAMP` | Timestamp when the entry was last updated        |
 
-#### `transaction` (BSON Object)
+#### `translations` (BSON Object)
 
 This field contains translations of the same content in different languages. Example data for the `transaction` field:
 
@@ -203,6 +203,14 @@ DELETE /del/:id
   "message": "FAQ deleted successfully"
 }
 ```
+
+---
+
+## **UI**
+
+### Dashboard for API Testing
+
+![Dashboard](./images/UI.png)
 
 ---
 

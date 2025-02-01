@@ -65,6 +65,10 @@ async function translateHTMLContent(htmlContent, fromLang, toLang) {
   return $.html();
 }
 
+function insertSpacesAroundTags(html) {
+  return html.replace(/(<\/?(strong|em)>)/g, " $1 ");
+}
+
 async function createFAQ(req, res) {
   try {
     const { question, answer } = req.body;
@@ -81,9 +85,11 @@ async function createFAQ(req, res) {
       "en"
     );
 
+    const spacedAnswerHTML = insertSpacesAroundTags(translatedAnswerHTML);
+
     const newFAQ = await FAQ.create({
       question: translatedQuestionNoHTML,
-      answer: translatedAnswerHTML,
+      answer: spacedAnswerHTML,
       translations: {},
     });
 
@@ -102,14 +108,16 @@ async function createFAQ(req, res) {
             lang
           );
           const tAnswerHTML = await translateHTMLContent(
-            translatedAnswerHTML,
+            spacedAnswerHTML,
             "en",
             lang
           );
 
+          const spaced_t_answerHTML = insertSpacesAroundTags(tAnswerHTML);
+
           translations[lang] = {
             question: tQuestionHTML,
-            answer: tAnswerHTML,
+            answer: spaced_t_answerHTML,
           };
         }
       })

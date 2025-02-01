@@ -1,4 +1,4 @@
-export const languages = [
+const languages = [
   { code: "en", name: "English" },
   { code: "es", name: "Spanish" },
   { code: "fr", name: "French" },
@@ -38,3 +38,7 @@ export const languages = [
   { code: "te", name: "Telugu" },
   { code: "mr", name: "Marathi" },
 ];
+
+export const sortedLanguages = languages.sort((a, b) =>
+  a.name.localeCompare(b.name)
+);

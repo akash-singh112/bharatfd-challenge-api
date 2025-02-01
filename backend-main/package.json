@@ -11,18 +11,13 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@types/chai": "^5.0.1",
-    "@types/chai-http": "^4.2.4",
     "cheerio": "^1.0.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "google-translate-api-x": "^10.7.2",
     "ioredis": "^5.4.2",
-    "next-themes": "^0.4.4",
     "pg": "^8.13.1",
-    "pg-hstore": "^2.3.4",
-    "react-icons": "^5.4.0",
     "sequelize": "^6.37.5",
     "uuid": "^11.0.5"
   },
@@ -30,9 +25,6 @@
     "chai": "^5.1.2",
     "chai-as-promised": "^8.0.1",
     "chai-http": "^5.1.1",
-    "mocha": "^11.1.0",
-    "sequelize-cli": "^6.6.2",
-    "sequelize-test-helpers": "^1.4.3",
-    "sqlite3": "^5.1.7"
+    "mocha": "^11.1.0"
   }
 }
