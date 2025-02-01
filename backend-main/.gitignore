@@ -27,7 +27,6 @@ Thumbs.db
 coverage/
 
 # Dependency directories (e.g., for tools like Yarn, NPM)
-package-lock.json
 yarn.lock
 
 # Database files (if applicable)
