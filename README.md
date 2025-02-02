@@ -35,7 +35,7 @@ The `FAQ` table stores frequently asked questions along with their answers.
 
 #### `translations` (BSON Object)
 
-This field contains translations of the same content in different languages. Example data for the `transaction` field:
+This field contains translations of the same content in different languages. Example data for the `translations` field:
 
 ```json
 {
